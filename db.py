@@ -1,6 +1,6 @@
 import pymysql.cursors
 
-connection = pymysql.connect(host="localhost", user="root", password="skipmaster12", db="flaskproject")
+connection = pymysql.connect(host="localhost", user="root", password="", db="flaskproject")
 def start():
     try:
         with connection.cursor() as cursor:
