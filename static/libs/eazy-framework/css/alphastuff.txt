@@ -1,0 +1,40 @@
+Work on the card e.g. Ionic Cards
+
+CSS:
+/* Tab Style */
+.eazy-tabs {
+  position: fixed;
+  height:8%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.40);
+}
+.eazy-tab-content{
+  position: fixed;
+  margin: 0 auto;
+  padding: 0;
+}
+.eazy-tab-item{
+  display: inline-block;
+  padding-left: 3.7em;
+  margin-top: 0.5em;
+  left: 0;
+  right: 0;
+}
+
+
+HTML:
+<div class="eazy-tabs" style="background-color:crimson;">
+  <div class="eazy-tab-content">
+    <div class="eazy-tab-item">
+      <eazybtn fab icon="windows" style="border:solid 1px black;"></eazybtn>
+    </div>
+    <div class="eazy-tab-item">
+      <eazybtn fab icon="windows" style="border:solid 1px black;"></eazybtn>
+    </div>
+    <div class="eazy-tab-item">
+      <eazybtn fab icon="windows" style="border:solid 1px black;"></eazybtn>
+    </div>
+  </div>
+</div>

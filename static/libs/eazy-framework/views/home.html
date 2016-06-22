@@ -1,0 +1,14 @@
+<eazybtn theme="nature" icon="file" fab ng-click="goOther();"></eazybtn>
+<eazybtn theme="warning">Warning</eazybtn>
+<eazybtn ng-click="showEXModal(true);">Show me the EXModal</eazybtn>
+
+<div class="eazy-modal" id="exmodal">
+  <div class="eazy-modal-content">
+    <div class="eazy-modal-header">
+      <eazybtn theme="clear" icon="times" ng-click="showEXModal(false);"></eazybtn>
+    </div>
+    <div class="eazy-modal-body">
+      hello world!
+    </div>
+  </div>
+</div>

@@ -10,12 +10,16 @@ def start():
         connection.close()
 
 def login_user(username, password):
-    usr = "'"+username+"'"
-    sect = "'"+password+"'"
-    sqlGetUser = "select * from users where username = "+usr+"and password = "+sect+" "
-    with connection.cursor as cursor:
-        try:
+    usr = "'",username,"'"
+    sect = "'",password,"'"
+    sqlGetUser = "select * from users where username = ",usr,"and password = ",sect
+    try:
+        with connection.cursor as cursor:
             cursor.execute(sqlGetUser)
-        except:
-            return "User not found"
-        finally: connection.close()
+            return True
+    except:
+        return False
+    finally:
+        connection.close()
+
+# def add_user(username, password, email):

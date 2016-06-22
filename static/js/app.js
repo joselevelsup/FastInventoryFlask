@@ -1,20 +1,20 @@
-angular.module("starter", ['ui.bootstrap'])
+angular.module("starter", ['TakeItEazy'])
 .controller("mainCtrl", function($scope, $http){
   $scope.formStuff = {
-    name: '',
+    username: '',
     message: ''
   }
   $scope.sendToFlask = function(){
-    $http.post("/postdata", $scope.formStuff, {
+    $http.post("/post", $scope.formStuff, {
       headers: {
         "Content-Type": "application/json"
       }
     })
     .success(function(data){
-      $scope.stuff = data;
+      console.log(data);
     })
-    .error(function(){
-      console.log("Something happened");
+    .error(function(err){
+      console.log("Something happened" + err);
     })
   }
 })

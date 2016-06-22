@@ -15,13 +15,20 @@ app.jinja_options = jinja_options
 
 @app.route("/")
 def start():
-    # db.start()
-    return render_template('hello.html')
+    return render_template('index.html')
 
 
-@app.route("/postdata", methods=['POST'])
+@app.route("/post", methods=['POST'])
 def returnUser():
-    return "Hello world"
+    param = request.get_json()
+    username = param.get("username");
+    password = param.get("password");
+    print username, password
+    if db.login_user(username, password):
+        return render_template("<h1>Logged in</h1>")
+    else:
+        return render_template("index.html")
 
 if __name__ == "__main__":
+    # db.start()
     app.run()

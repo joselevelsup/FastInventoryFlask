@@ -1,0 +1,17 @@
+<eazy-nav-bar theme="crimson">
+  <div class="nav-icon">
+    <eazybtn icon="bars" theme="clear" ng-click="toggleMenu();"></eazybtn>
+  </div>
+  <div class="nav-item">
+    <nav-title></nav-title>
+  </div>
+  <eazy-loading/>
+</eazy-nav-bar>
+<eazy-side-nav side="left" id="exmenu">
+  <eazybtn icon="android" theme="clear" ng-click="closeMenu();" text="Android" class="side-item"></eazybtn>
+  <hr><eazybtn icon="apple" theme="clear" text="iOS" class="side-item"></eazybtn>
+  <hr><eazybtn icon="windows" theme="clear" text="Windows Phone" class="side-item"></eazybtn>
+</eazy-side-nav>
+<eazy-content>
+  <div ui-view="content"></div>
+</eazy-content>
