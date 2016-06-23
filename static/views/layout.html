@@ -1,0 +1,21 @@
+<eazy-nav-bar theme="lightblue">
+  <div class="nav-icon">
+    <eazybtn icon="th" theme="clear" ng-click="popoverMenu();"></eazybtn>
+  </div>
+  <div class="nav-item">
+    <nav-title></nav-title>
+  </div>
+  <div class="nav-icon-right">
+    <eazybtn icon="gears" theme="clear" ng-click="showSettings();"></eazybtn>
+  </div>
+</eazy-nav-bar>
+
+<eazy-side-nav side="left" style="opacity:1;width:20em;">
+  <eazybtn icon="android" theme="clear" text="Android" class="side-item"></eazybtn>
+  <hr><eazybtn icon="apple" theme="clear" text="iOS" class="side-item"></eazybtn>
+  <hr><eazybtn icon="windows" theme="clear" text="Windows Phone" class="side-item"></eazybtn>
+</eazy-side-nav>
+
+<eazy-content>
+  <div ui-view="content"></div>
+</eazy-content>

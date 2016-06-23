@@ -101,6 +101,7 @@ html, body{
 
 .content {
   margin-top: 4.5em;
+  margin-left: 21.5em;
   width: auto;
   height: auto;
 }
@@ -280,7 +281,7 @@ html, body{
     overflow: hidden;
     padding-top: 100px;
     transition: 0.5s;
-    box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0.30);
+    box-shadow: 3px 5px 5px 3px rgba(0, 0, 0, 0.30);
 }
 .eazy-side-nav.right{
   right:0;

@@ -8,7 +8,7 @@ eazy.run(function($rootScope, $state, $stateParams){
 eazy.factory("eazy", function(){
   return{
     start: function(){
-        document.getElementsByTagName('head')[0].innerHTML += "<meta name='viewport' content='initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width'> <link rel='stylesheet' href='static/libs/eazy-framework/css/eazy.css'/> <link rel='stylesheet' href='css/font-awesome.css'/>";
+        document.getElementsByTagName('head')[0].innerHTML += "<meta name='viewport' content='initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width'> <link rel='stylesheet' href='static/libs/eazy-framework/css/eazy.css'/> <link rel='stylesheet' href='static/libs/eazy-framework/css/font-awesome.css'/>";
         // This is for the Cordova version
      // document.getElementsByTagName('head')[0].innerHTML += "<meta name='viewport' content='initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width'> <link rel='stylesheet' href='lib/eazy-framework/css/eazy.css'/> <link rel='stylesheet' href='lib/eazy-framework/css/font-awesome.css'/>";
     },

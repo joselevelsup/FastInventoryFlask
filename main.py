@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, json
+from flask import Flask, render_template, request, json, redirect, url_for
 import db
 
 app = Flask(__name__, static_url_path='/static')
@@ -17,6 +17,13 @@ app.jinja_options = jinja_options
 def start():
     return render_template('index.html')
 
+@app.route("/pass")
+def passed():
+    return "<h1>Logged in</h1>"
+
+@app.route("/fail")
+def failed():
+    return "<h1>Failed</h1>"
 
 @app.route("/post", methods=['POST'])
 def returnUser():
@@ -25,10 +32,10 @@ def returnUser():
     password = param.get("password");
     print username, password
     if db.login_user(username, password):
-        return render_template("<h1>Logged in</h1>")
+        return "passed"
     else:
-        return render_template("index.html")
+        return "failed"
 
 if __name__ == "__main__":
     # db.start()
-    app.run()
+    app.run(port=8080)
