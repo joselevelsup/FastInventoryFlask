@@ -72,7 +72,7 @@ eazy.directive("eazyNavBar", function(){
     },
     replace: true,
     transclude: true,
-    template: "<div class='eazy-nav' style='background-color: {{theme}}' ng-transclude></div>",
+    template: "<div class='eazy-nav nav-bar-{{theme}}'  ng-transclude></div>",
   }
 });
 

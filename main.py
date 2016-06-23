@@ -15,26 +15,24 @@ app.jinja_options = jinja_options
 
 @app.route("/")
 def start():
-    return render_template('index.html')
-
-@app.route("/pass")
-def passed():
-    return "<h1>Logged in</h1>"
-
-@app.route("/fail")
-def failed():
-    return "<h1>Failed</h1>"
-
-@app.route("/post", methods=['POST'])
-def returnUser():
-    param = request.get_json()
-    username = param.get("username");
-    password = param.get("password");
-    print username, password
-    if db.login_user(username, password):
-        return "passed"
+    if db.isSignedIn():
+        return render_template('index.html')
     else:
-        return "failed"
+        return render_template('login.html')
+
+@app.route("/post", methods=['GET', 'POST'])
+def login():
+    if request.method == "GET":
+        return render_template("login.html")
+    elif request.method == "POST":
+        param = request.get_json()
+        username = param.get("username");
+        password = param.get("password");
+        print username, password
+        if db.login_user(username, password):
+            return redirect(url_for("start"))
+        else:
+            return "failed"
 
 if __name__ == "__main__":
     # db.start()
