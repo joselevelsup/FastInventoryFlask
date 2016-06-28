@@ -12,15 +12,12 @@ def start():
 def login_user(username, password):
     usr = "'",username,"'"
     sect = "'",password,"'"
-    sqlGetUser = "select * from users where username = ",usr,"and password = ",sect
+    # sqlGetUser = "select username, password from users where username = ",usr,"and password = ",sect
     try:
-        with connection.cursor as cursor:
-            cursor.execute(sqlGetUser)
-            return True
+        conection.cursor().execute("select * from users where username = 'jortiz3994' and password = 'admin123'")
+        return True
     except:
         return False
-    finally:
-        connection.close()
 
 
 def isSignedIn():
@@ -31,6 +28,5 @@ def isSignedIn():
             return True
     except:
         return False
-    finally:
-        connection.close()
+
 # def add_user(username, password, email):

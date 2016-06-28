@@ -18,21 +18,28 @@ def start():
     if db.isSignedIn():
         return render_template('index.html')
     else:
-        return render_template('login.html')
+        return redirect(url_for("loginpage"))
 
-@app.route("/post", methods=['GET', 'POST'])
+
+@app.route("/post", methods=['POST'])
 def login():
-    if request.method == "GET":
-        return render_template("login.html")
-    elif request.method == "POST":
-        param = request.get_json()
-        username = param.get("username");
-        password = param.get("password");
-        print username, password
-        if db.login_user(username, password):
-            return redirect(url_for("start"))
-        else:
-            return "failed"
+    # when using JSON posts
+    # param = request.get_json()
+    # username = param.get("username");
+    # password = param.get("password");
+    username = request.form["username"]
+    password = request.form["password"]
+    print username, password
+    if db.login_user(username, password):
+        return "pass"
+        # return redirect(url_for("start"))
+    else:
+        return "failed"
+
+@app.route("/login")
+def loginpage():
+    return render_template("login.html")
+
 
 if __name__ == "__main__":
     # db.start()
