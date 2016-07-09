@@ -15,32 +15,30 @@ app.jinja_options = jinja_options
 
 @app.route("/")
 def start():
-    if db.isSignedIn():
-        return render_template('index.html')
-    else:
-        return redirect(url_for("loginpage"))
+    return redirect(url_for("templ"))
 
+@app.route("/login")
+def templ():
+    return render_template("login.html")
 
 @app.route("/post", methods=['POST'])
 def login():
-    # when using JSON posts
-    # param = request.get_json()
-    # username = param.get("username");
-    # password = param.get("password");
     username = request.form["username"]
     password = request.form["password"]
     print username, password
+    print db.login_user(username, password)
     if db.login_user(username, password):
-        return "pass"
-        # return redirect(url_for("start"))
+        return redirect(url_for("main"))
     else:
-        return "failed"
+        return redirect(url_for("try_again"))
 
-@app.route("/login")
-def loginpage():
-    return render_template("login.html")
+@app.route("/login/try")
+def try_again():
+    return render_template("retry.html")
 
+@app.route("/inventory")
+def main():
+    return render_template("index.html")
 
 if __name__ == "__main__":
-    # db.start()
     app.run(port=8080)

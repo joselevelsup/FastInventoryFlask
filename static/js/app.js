@@ -2,7 +2,7 @@ angular.module("starter", ['TakeItEazy'])
 .run(function(eazy){
   eazy.start();
 })
-.config(function($stateProvider, $urlRouterProvider, $locationProvider){
+.config(function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise("/layout/home");
 
   $stateProvider
@@ -23,27 +23,6 @@ angular.module("starter", ['TakeItEazy'])
     });
 })
 
-.controller("mainCtrl", function($scope, $http, $window){
-  $scope.formStuff = {
-    username: '',
-    message: ''
-  }
-  $scope.sendToFlask = function(){
-    $http.post("/post", $scope.formStuff, {
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    .success(function(data){
-      if(data == "passed"){
-        $window.location.href ="/pass";
-      }
-      if(data == "failed"){
-        $window.location.href ="/fail";
-      }
-    })
-    .error(function(err){
-      console.log("Something happened" + err);
-    })
-  }
+.controller("mainCtrl", function($scope, $http, $state){
+
 })

@@ -10,23 +10,20 @@ def start():
         connection.close()
 
 def login_user(username, password):
-    usr = "'",username,"'"
-    sect = "'",password,"'"
-    # sqlGetUser = "select username, password from users where username = ",usr,"and password = ",sect
     try:
-        conection.cursor().execute("select * from users where username = 'jortiz3994' and password = 'admin123'")
+        connection.cursor().execute("select * from users where username = %s and password = %s", (username, password))
         return True
     except:
         return False
 
 
-def isSignedIn():
-    sqlCheck = "select * from users where status = 1"
-    try:
-        with connection.cursor as cursor:
-            cursor.execute(sqlCheck)
-            return True
-    except:
-        return False
+# def isSignedIn():
+#     sqlCheck = "select * from users where status = 1"
+#     try:
+#         with connection.cursor as cursor:
+#             cursor.execute(sqlCheck)
+#             return True
+#     except:
+#         return False
 
 # def add_user(username, password, email):

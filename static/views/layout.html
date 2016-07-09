@@ -5,15 +5,17 @@
   <div class="nav-item">
     <nav-title></nav-title>
   </div>
-  <div class="nav-icon-right">
-    <eazybtn icon="gears" theme="clear" ng-click="showSettings();"></eazybtn>
+  <div ng-if="user">
+    <div class="nav-icon-right">
+      <eazybtn icon="gears" theme="clear" ng-click="showSettings();"></eazybtn>
+    </div>
   </div>
 </eazy-nav-bar>
 
 <eazy-side-nav side="left" style="opacity:1;width:20em;">
   <eazybtn icon="android" theme="clear" text="Android" class="side-item"></eazybtn>
   <hr><eazybtn icon="apple" theme="clear" text="iOS" class="side-item"></eazybtn>
-  <hr><eazybtn icon="windows" theme="clear" text="Windows Phone" class="side-item"></eazybtn>
+  <hr><eazybtn theme="clear" class="side-item">%% username %%</eazybtn>
 </eazy-side-nav>
 
 <eazy-content>
