@@ -1,7 +1,27 @@
-<eazybtn theme="nature" icon="file" fab="fab" ng-click="goOther();"></eazybtn>
-<eazybtn theme="warning">Warning</eazybtn>
-<eazybtn ng-click="showEXModal(true);">Show me the EXModal</eazybtn>
-
+<eazybtn theme="clear" icon="plus-circle" text="Add Item" ng-click="$state.go('layout.add');"></eazybtn>
+<eazybtn theme="clear" icon="minus-circle" text="Edit Item" ng-click=""></eazybtn>
+<table border="1" style="width:100%;height:10%">
+    <thead>
+      <tr>
+        <th>Item ID</th>
+        <th>Item Type</th>
+        <th>Model Number</th>
+        <th>QR Codes</th>
+        <th>Quantity</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="i in inventory">
+        <td style="padding:11px 0 11px 0;"><center>{{i[0]}}</center></td>
+        <td><center>{{i[1]}}</center></td>
+        <td><center>{{i[2]}}</center></td>
+        <td><center><img ng-src="https://api.qrserver.com/v1/create-qr-code/?data={{i[2]}}&amp;size=100x100"/>
+        <td><center>{{i[3]}}</center></td>
+        <td><center>{{i[4]}}</center></td>
+      </tr>
+    </tbody>
+</table>
 <div class="eazy-modal" id="exmodal">
   <div class="eazy-modal-content">
     <div class="eazy-modal-header">

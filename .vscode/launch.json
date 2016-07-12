@@ -6,7 +6,7 @@
             "type": "python",
             "request": "launch",
             "stopOnEntry": true,
-            "program": "${file}",
+            "program": "${workspaceRoot}\\main.py",
             "debugOptions": [
                 "WaitOnAbnormalExit",
                 "WaitOnNormalExit",
@@ -30,7 +30,7 @@
             "type": "python",
             "request": "launch",
             "stopOnEntry": true,
-            "program": "${workspaceRoot}/manage.py",
+            "program": "${workspaceRoot}\\main.py",
             "args": [
                 "runserver",
                 "--noreload"

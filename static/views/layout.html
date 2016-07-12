@@ -1,21 +1,16 @@
-<eazy-nav-bar theme="positive">
-  <div class="nav-icon">
-    <eazybtn icon="th" theme="clear" ng-click="popoverMenu();"></eazybtn>
-  </div>
+<eazy-nav-bar theme="warning">
   <div class="nav-item">
     <nav-title></nav-title>
   </div>
-  <div ng-if="user">
-    <div class="nav-icon-right">
-      <eazybtn icon="gears" theme="clear" ng-click="showSettings();"></eazybtn>
-    </div>
+  <div class="nav-icon-right">
+    <eazybtn theme="clear" icon="sign-out" onclick="logout();"></eazybtn>
   </div>
 </eazy-nav-bar>
 
 <eazy-side-nav side="left" style="opacity:1;width:20em;">
-  <eazybtn icon="android" theme="clear" text="Android" class="side-item"></eazybtn>
-  <hr><eazybtn icon="apple" theme="clear" text="iOS" class="side-item"></eazybtn>
-  <hr><eazybtn theme="clear" class="side-item">%% username %%</eazybtn>
+  <eazybtn icon="shopping-cart" theme="clear" text="Inventory" class="side-item" ng-click="$state.go('layout.home');"></eazybtn>
+  <hr><eazybtn icon="filter" theme="clear" text="Filter Items" class="side-item"></eazybtn>
+  <hr>
 </eazy-side-nav>
 
 <eazy-content>

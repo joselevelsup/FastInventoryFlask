@@ -438,7 +438,6 @@ html, body{
 }
 
 .alert-item{
-  visibility: hidden;
   position: absolute;
   bottom: 10%;
   left:-250;

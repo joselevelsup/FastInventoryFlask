@@ -1,0 +1,26 @@
+<ion-view view-title="Home">
+  <ion-nav-bar class="bar-energized" align-title="left">
+    <ion-nav-buttons side="right">
+      <button class="button button-icon icon ion-log-out" menu-toggle="right" ng-click="logoutUser();"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content>
+    <div class="padding">
+     <div class="item item-text-wrap">
+        Welcome to the Fast Inventory App!
+     </div>
+     <div class="item item-text-wrap">
+        Click on the Button below to begin the methods to scan the item you wish to scan.
+     </div>
+   </div>
+   <div class="padding">
+     <div class="item item-text-wrap">
+       Please Enter the Model Number in which you are going to Scan:
+     </div>
+     <label class="item item-input">
+         <input type="text" placeholder="Model Number" ng-model="model">
+     </label>
+   </div>
+    <button class="button button-assertive fab icon ion-camera" style="float:right;position:absolute;top:22em;right:10px;" ng-click="scan();"></button>
+ </ion-content>
+</ion-view>
